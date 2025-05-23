@@ -1,27 +1,17 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
 
-{% block title %}Blog{% endblock %}
-
-{% block body %}
-    <h1>Latest Blog Posts</h1>
-
-    {% if posts is empty %}
-        <div class="alert alert-info">
-            No posts found.
-        </div>
-    {% else %}
-        <div class="row">
-            {% for post in posts %}
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.summary|length > 150 ? post.summary|slice(0, 150) ~ '...' : post.summary }}</p>
-                            <a href="{{ path('post_show', { id: post.id }) }}" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endblock %}
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>
