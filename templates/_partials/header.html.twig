@@ -1,17 +1,18 @@
 
-<header class="site-header">
+<header class="header">
     <div class="container">
-        <h1 class="logo">
-            <a href="{{ path('homepage') }}">MyFakeCompany</a>
-        </h1>
+        <div class="logo">
+            <img src="{{asset('images/logo_graphitcom.png')}}">
+            
+        </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="{{ path('about_us') }}">About Us</a></li>
-                <li><a href="{{ path('services') }}">Services</a></li>
-                <li><a href="{{ path('contact') }}">Contact</a></li>
-                <li><a href="{{ path('app_login') }}">Login</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                
             </ul>
         </nav>
     </div>
 </header>
-{% include 'partial/_header.html.twig' %}
