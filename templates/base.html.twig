@@ -7,13 +7,20 @@
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
+        {# {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+        {% endblock %} #}
     </head>
     <body>
-        {% block body %}
-        
+
+
+
+        {% block body %}     
         {% endblock %}
+
+        	{% block footer %}
+			{% include "_partials/footer.html.twig" %}
+		    {% endblock %}
+
     </body>
 </html>
