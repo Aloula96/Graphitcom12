@@ -12,7 +12,7 @@ import 'bootstrap';
 
 
 // Je prends le CSS de Bootstrap
-import './vendor/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
