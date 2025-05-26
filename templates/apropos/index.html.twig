@@ -6,33 +6,36 @@
 
 {% block body %}
 	<h1>À propos</h1>
-	<section class="container-apropos">
-		<div class="apropos">		
+	<section class="apropos1 container">
+		<div class="paragraph1">
 			<p>À propos de Graphitcom</p>
 			<p>Bienvenue sur graphitcom,votre espace dédié à la créativité numérique 
-			   et à la formation en design graphique.</p>
+				et à la formation en design graphique.</p>
 			<p>Crée en 2016,Graphitcom est né de la passion pour l'art visuel et les outils numériques. 
-			   L'idée a émergé après plusieurs années d'expérience dans le domaine du graphisme et de l'enseignement, avec 
-			   l'objectif de rendre la formation graphique accessible à tous, 
-			   que vous soyez débutant, amateur ou professionnel.</p>		
-		</div>	
-
-		<div class="logo-apropos">
-			<img  src="{{asset('images/logo_graphitcom.png')}}" alt="logo">
-		</div>	
-	</section>
-	
-	<div class="paragraph2-apropos">
-		<img src="{{asset('images/femmePC.png')}}" alt="image d'une femme sur un pc">
-		<div class="paragraph2">
-		<p>À propos de Graphitcom</p>
-		<p>Bienvenue sur graphitcom,votre espace dédié à la créativité numérique 
-			et à la formation en design graphique.</p>
-		<p>Crée en 2016,Graphitcom est né de la passion pour l'art visuel et les outils numériques. 
-		   L'idée a émergé après plusieurs années d'expérience dans le domaine du graphisme et de l'enseignement, avec 
-		   l'objectif de rendre la formation graphique accessible à tous, 
-		   que vous soyez débutant, amateur ou professionnel.</p>	
+				L'idée a émergé après plusieurs années d'expérience dans le domaine du graphisme et de l'enseignement, avec 
+				l'objectif de rendre la formation graphique accessible à tous, 
+				que vous soyez débutant, amateur ou professionnel.</p>
 		</div>
-	</div>
+
+		<div class="img-apropos1 container">
+			<img src="{{asset('images/logo_graphitcom.png')}}" alt="logo">
+		</div>
+	</section>
+
+	<section class="apropos2 container">
+		<div class="img-apropos2">
+			<img src="{{asset('images/femmePC.png')}}" alt="image d'une femme sur un pc">
+		</div>
+
+		<div class="paragraph2 ">
+				<p>À propos de Graphitcom</p>
+				<p>Bienvenue sur graphitcom,votre espace dédié à la créativité numérique 
+					et à la formation en design graphique.</p>
+				<p>Crée en 2016,Graphitcom est né de la passion pour l'art visuel et les outils numériques. 
+					L'idée a émergé après plusieurs années d'expérience dans le domaine du graphisme et de l'enseignement, avec 
+					l'objectif de rendre la formation graphique accessible à tous, 
+					que vous soyez débutant, amateur ou professionnel.</p>
+		</div>
+		
 	</section>
 {% endblock %}

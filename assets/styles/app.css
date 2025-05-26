@@ -1,5 +1,5 @@
 body {
-    background-color: #F6F6F7;
+    background-color: #F5F5F5;
     font-family: "roboto";
     height: 100vh;
  
@@ -87,6 +87,8 @@ body {
     width: 35vw;
     height: 25vh;  
 }
+
+/* footer */
 footer{
     background-color: #313131;    
     height: 80px;
@@ -99,7 +101,7 @@ footer ,p{
     font-size: 20px;    
 }
 
-/* fin footer */
+
 
 /* page apropos */
 h1{
@@ -110,40 +112,42 @@ h1{
     /* font-family: ; mettre la police manquante*/ 
     
 }
-.container-apropos{
+.apropos1{
     display: flex;
-    flex-direction: column;    
-   
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    margin-top: 100px;
 }
 
-.apropos p{     
+.apropos1 p {
     color: #313131;
-    font-size: 20px;
-    text-align: left;
-    width: 60%;
-    margin: 30px;
-    height: auto;
+    font-family: 'roboto';
+    margin-top: 10px;    
+    /* text-align: left; */
 }
 
 
- .logo-apropos img {   
-    display: flex;  
-    height: 200px;  
-    margin: 20px; 
-    float: right;    
+
+.apropos2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
 }
 
-.paragraph2-apropos {
-    display: flex;    
-    color:#313131;
-    text-align:left;
-    margin:30px;
-    font-size: 20px;
-    margin-bottom: 5px;
+.apropos2 p {
+    color: #313131;
+    font-family: 'roboto';
+    margin-top: 10px;
+ 
 }
-.paragraph2 p{
-    color:#313131;
-    text-align: left;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+
+
+
+
