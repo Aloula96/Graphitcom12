@@ -8,6 +8,7 @@ import './bootstrap.js';
  */
 
 
+
 // Je prends le CSS de Bootstrap
 import './vendor/bootstrap/dist/css/bootstrap.min.css';
 // Je prends le JS de Bootstrap
