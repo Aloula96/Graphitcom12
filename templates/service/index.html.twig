@@ -1,28 +1,53 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} 
 
-{% block title %}Blog{% endblock %}
+ 
 
-{% block body %}
-    <h1>Latest Blog Posts</h1>
+{% block body %} 
 
-    {% if posts is empty %}
-        <div class="alert alert-info">
-            No posts found.
-        </div>
-    {% else %}
-        <div class="row">
-            {% for post in posts %}
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ post.title }}</h5>
-                            <p class="card-text">{{ post.summary|length > 150 ? post.summary|slice(0, 150) ~ '...' : post.summary }}</p>
-                            <a href="{{ path('post_show', { id: post.id }) }}" class="btn btn-primary">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-    {% endif %}
-{% endblock %}
+<div class="container mt-5"> 
 
+    <div class="row row-cols-1 row-cols-md-3 g-4"> 
+
+        {% for service in services %} 
+
+            <div class="col"> 
+
+                <div class="card h-100 text-center"> 
+
+                    <img src="{{ asset('assets/images/' ~ service.image) }}" class="card-img-top img-fluid p-4" style="max-height: 200px; object-fit: contain;" alt="{{ service.title }}"> 
+
+                    <div class="card-body"> 
+
+                        <h5 class="card-title">{{ service.title }}</h5> 
+
+ 
+
+                        <div class="collapse" id="desc-{{ loop.index }}"> 
+
+                            <p class="card-text">{{ service.description }}</p> 
+
+                        </div> 
+
+ 
+
+                        <a class="btn btn-outline-primary mt-2" data-bs-toggle="collapse" href="#desc-{{ loop.index }}" role="button" aria-expanded="false" aria-controls="desc-{{ loop.index }}"> 
+
+                            Voir les détails 
+
+                        </a> 
+
+                    </div> 
+
+                </div> 
+
+            </div> 
+
+        {% endfor %} 
+
+    </div> 
+
+</div> 
+
+{% endblock %} 
+
+ 
