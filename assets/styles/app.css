@@ -1,3 +1,153 @@
 body {
-    background-color: skyblue;
+    background-color: #F5F5F5;
+    font-family: "roboto";
+    height: 100vh;
+ 
+   
 }
+/* nav couleur */
+.bg-color {
+  background: linear-gradient(to right, white, #376DAA, #376DAA, #376DAA   );
+}
+/* media query du nav */
+@media (max-width: 767.98px) {
+  .navbar-nav {
+    margin-left: auto !important;
+  }
+}
+.siteWeb {
+    display: flex;
+      flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+     align-content: center;
+     justify-content: space-evenly;
+      /* background-color: #F6F6F7; */
+        margin-top: 100px;
+}
+.siteWeb p {
+    color: #303131;
+    font-family: 'roboto';
+      margin-top: 10px;
+}
+.btn-siteWeb {
+  background-color: #DC7627;
+    color: #F6F6F7;
+      width: 150px;
+    border: none;
+    padding: 10px ;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.formation {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    /* background-color: #F6F6F7; */
+    margin-top: 100px;
+
+    
+}
+.formation p {
+    color: #303131;
+    font-family: 'roboto';
+      margin-top: 10px;
+}
+ .btn-formation {
+    background-color: #DC7627;
+    color: #F6F6F7;
+    width: 150px;
+    border: none;
+    padding: 10px ;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+   
+}
+.box-formation {
+   width: 45vh;
+}
+.box-siteWeb {
+    width: 60vh;
+}
+
+.logo-siteWeb img { 
+    width: 35vw;
+    height: 25vh;
+  
+  
+}
+.img-formation img {
+    width: 35vw;
+    height: 25vh;  
+}
+
+/* footer */
+footer{
+    background-color: #313131;    
+    height: 80px;
+    font-family: 'roboto';   
+}
+footer ,p{
+    color:#F5F5F5;
+    text-align: center;
+    align-content: center;
+    font-size: 20px;    
+}
+
+
+
+/* page apropos */
+h2{
+    color:#313131;
+    font-size: 48px ;
+    text-align: center;
+    margin: 50px;
+    /* font-family: ; mettre la police manquante*/ 
+    
+}
+.apropos1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.apropos1 p {
+    color: #313131;
+    font-family: 'roboto';
+    margin-top: 10px;    
+    /* text-align: left; */
+}
+
+
+
+.apropos2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+.apropos2 p {
+    color: #313131;
+    font-family: 'roboto';
+    margin-top: 10px;
+ 
+}
+
+
+
+

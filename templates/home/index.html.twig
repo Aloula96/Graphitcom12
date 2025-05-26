@@ -3,18 +3,35 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/bajil/Documents/Grafitcom/Graphitcom12/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/Users/bajil/Documents/Grafitcom/Graphitcom12/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+
+<main>
+    <section class="siteWeb container">
+        <div class="box-siteWeb">
+            <h1>Création de sites web et formations </h1>
+            <p>Création de site web, application, webdesign et print, SEO, conseil et formation</p>
+            <div class="btn-siteWeb text-center">
+                Découvrir
+            </div>
+        </div>
+         <div class="logo-siteWeb">
+            <img src="{{ asset('images/logo_graphitcom.png') }}"  >
+        </div>
+    </section>
+
+    <section class="formation container">
+        <div class="box-formation">
+            <h1>FORMATION</h1>
+            <p>Se former à la création de sites internet apprenez à concevoir et gérer votre propre site web grâce à nos formations</p>
+            <div class="btn-formation text-center">
+                Découvrir
+            </div>
+        </div>
+         <div class="img-formation">
+            <img src="{{ asset('images/logo_graphitcom.png') }}" >
+        </div>
+    </section>
+</main>
+
 {% endblock %}

@@ -4,19 +4,15 @@ import './bootstrap.js';
  *
  * This file will be included onto the page via the importmap() Twig function,
  * which should already be in your base.html.twig.
+ * 
  */
 
-
-// Je prends le JS de Bootstrap
-import 'bootstrap';
 
 
 // Je prends le CSS de Bootstrap
 import './vendor/bootstrap/dist/css/bootstrap.min.css';
+// Je prends le JS de Bootstrap
+import 'bootstrap';
 
-
-
-//  c'est notre css
 import './styles/app.css';
-
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
