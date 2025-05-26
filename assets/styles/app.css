@@ -14,6 +14,8 @@ body {
   .navbar-nav {
     margin-left: auto !important;
   }
+  
+
 }
 .siteWeb {
     display: flex;
@@ -109,45 +111,81 @@ h1{
     font-size: 48px ;
     text-align: center;
     margin: 50px;
-    /* font-family: ; mettre la police manquante*/ 
+  
     
 }
-.apropos1{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: space-around;
-    margin-top: 100px;
+/* Styles de base (desktop & grands écrans) */
+.apropos1, .apropos2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.apropos1 p {
-    color: #313131;
-    font-family: 'roboto';
-    margin-top: 10px;    
-    /* text-align: left; */
+.apropos1 p, .apropos2 p {
+  text-align: left;
 }
 
-
-
-.apropos2{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    justify-content: space-evenly;
-    margin-top: 100px;
+.paragraph1, .paragraph2,
+.img-apropos1, .img-apropos2 {
+  flex: 1 1 45%;
+  max-width: 45%;
 }
 
-.apropos2 p {
-    color: #313131;
-    font-family: 'roboto';
-    margin-top: 10px;
+.img-apropos1 img,
+.img-apropos2 img {
+  max-width: 100%;
+  height: auto;
+
  
 }
+.img-apropos1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.img-apropos2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
 
+.apropos1 p, .apropos2 p {
+  color: #303131;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 1.6;
+}
 
+/* ✅ Responsive pour tablettes (≤ 992px) */
+@media (max-width: 992px) {
+  .paragraph1, .paragraph2,
+  .img-apropos1, .img-apropos2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    text-align: center;
+  }
 
+  .apropos1, .apropos2 {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
 
+/* ✅ Responsive pour mobiles (≤ 576px) */
+@media (max-width: 576px) {
+  .apropos1 p, .apropos2 p {
+    font-size: 16px;
+    padding: 0 1rem;
+  }
+
+  .apropos1, .apropos2 {
+    padding: 1rem;
+  }
+}

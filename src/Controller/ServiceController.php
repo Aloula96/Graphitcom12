@@ -84,22 +84,22 @@ final class ServiceController extends AbstractController
 
                 'image' => 'service6.png' 
 
-            ], 
+                ], 
 
-        ]; 
+            ]; 
 
- 
+    
 
-        return $this->render('service/index.html.twig', [ 
+            return $this->render('service/index.html.twig', [ 
 
-            'services' => $services, 
+                'services' => $services, 
 
-        ]); 
+            ]); 
+
+        } 
 
     } 
 
-} 
+    
 
- 
-
- 
+    
