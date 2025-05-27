@@ -1,7 +1,7 @@
 <?php
-
 namespace App\Form;
 
+use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,36 +17,31 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-             ->add('nom', TextType::class, [
+            ->add('lastname', TextType::class, [
                 'required' => true,
                 'label' => 'Nom',
-             
             ])
-            ->add('prenom', TextType::class, [
+            ->add('firstname', TextType::class, [
                 'required' => true,
                 'label' => 'Prénom',
-         
             ])
             ->add('email', EmailType::class, [
                 'required' => true,
                 'label' => 'Email',
-  
             ])
-            ->add('telephone', TelType::class, [
+            ->add('phone', TelType::class, [
                 'required' => false,
                 'label' => 'Téléphone',
-     
             ])
-        ->add('objet', ChoiceType::class, [
-    'label' => 'Objet',
-    'choices' => [
-        'Demande de rendez vous' => 'rdv',
-        'Support technique' => 'support',
-        'Renseignement' => 'info',
-        'Autre' => 'autre',
-    ],
-
-])
+            ->add('objet', ChoiceType::class, [
+                'label' => 'Objet',
+                'choices' => [
+                    'Demande de rendez vous' => 'rdv',
+                    'Support technique' => 'support',
+                    'Renseignement' => 'info',
+                    'Autre' => 'autre',
+                ],
+            ])
             ->add('message', TextareaType::class, [
                 'label' => 'Entrez votre message',
             ])
@@ -57,6 +52,8 @@ class ContactType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+            'data_class' => Contact::class, 
+        ]);
     }
 }

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Devis
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h2>Demande de Devis</h2>
+
+		{# Pour afficher une confirmation d'envoie de formulaire #}
+		{# {% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %} #}
+		<div class="row">
+			<div class="col-md-6 mx-auto">
+				{{ form_start(form) }}
+				<div class="mb-2">
+					{{ form_row(form.lastName) }}
+				</div>
+				<div class="mb-2">
+					{{ form_row(form.firstName) }}</div>
+
+				<div class="mb-2">
+					{{ form_row(form.email) }}
+				</div>
+				<div class="mb-2">
+					{{ form_row(form.vitrine)}}
+				</div>
+				<div class="mb-2">
+					{{ form_row(form.ecommerce) }}
+				</div>
+				<div class="mb-2">
+					{{ form_row(form.application) }}
+				</div>
+				<div class="mb-2">
+					{{ form_row(form.webdesign) }}
+				</div>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+
+
+</div>{% endblock %}
