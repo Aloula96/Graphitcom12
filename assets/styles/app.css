@@ -86,8 +86,6 @@ nav {
 }
 
 .btn-formation {
-
-.btn-formation {
     background-color: #DC7627;
     color: #F6F6F7;
     width: 150px;
@@ -202,7 +200,7 @@ footer{
     height: 80px;
     font-family: 'roboto';   
 }
-footer {
+
 footer {
     color:#F5F5F5;
     text-align: center;
