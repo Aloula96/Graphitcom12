@@ -2,12 +2,14 @@
 
 namespace App\Form;
 
-use App\Entity\Devis;
 use Dom\Text;
+use App\Entity\Devis;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 
 class DevisType extends AbstractType
 {
@@ -32,43 +34,26 @@ class DevisType extends AbstractType
             ->add('phone', TextType::class, [
                 'label' => 'Téléphone',
                 'required' => false,
-            ])
-            ->add('vitrine', TextType::class, [
-                'label' => 'Création de site vitrine',
-                'required' => false,
-               
-            ])
-            ->add('ecommerce', TextType::class, [
-                'label' => 'Création de site e-commerce',
-                'required' => false,
-               
-            ])
-            ->add('application', TextType::class, [
-                'label' => 'Création d\'application web/mobile',
-                'required' => false,
-                
-            ])
-            ->add('webdesign', TextType::class, [
-                'label' => 'Création de webdesign',
-                'required' => false,
-                
-            ])
-            ->add('seo', TextType::class, [
-                'label' => 'Référencement SEO(référencement naturel',
-                'required' => false,
-               
-            ])
-            ->add('formation', TextType::class, [
-                'label' => 'Formation',
-                'required' => false,
-                
-            ])
-            ->add('conseil', TextType::class, [
-                'label' => 'Conseil',
-                'required' => false,
-                
-            ])
-        ;
+            ])                                 
+         
+
+            // ->add('option', ChoiceType::class, [
+            //     'label' => 'Votre projet :',
+            //     'choices' => [
+            //     'Création de site vitrine' => 'vitrine', 
+            //     'Création de site e-commerce' => 'ecommerce',
+            //     'Création d\'application web/mobile' => 'application',
+            //     'Création de webdesign' => 'webdesign',
+            //     'Référencement SEO (référencement naturel)' => 'seo',
+            //     'Formation' => 'formation',
+            //     'Conseil' => 'conseil',
+            //     'Autre' => 'autre',
+            //     ],              
+        
+            //      'expanded' => true,     //  choix checkbox
+            //     //  'multiple' => false, 
+            //      'required' => true,
+    ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
