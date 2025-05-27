@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %} 
+
+{% block title %}Contact{% endblock %} 
+
+{% block body %} 
+
+<div class="container mt-4"> 
+
+    <h1>Formulaire de contact</h1> 
+
+{# Pour afficher une confirmation d'envoie de formulaire #} 
+
+    {% for message in app.flashes('success') %} 
+
+        <div class="alert alert-success"> 
+
+            {{ message }} 
+
+        </div> 
+
+    {% endfor %} 
+
+   <div class="row"> 
+
+        <div class="col-md-6 mx-auto"> 
+
+    {{ form_start(form) }} 
+
+         <div class="mb-2"> 
+
+        {{ form_row(form.lastname) }} 
+
+        </div> 
+
+             <div class="mb-2"> 
+
+        {{ form_row(form.firstname) }}</div> 
+
+          
+
+             <div class="mb-2"> 
+
+        {{ form_row(form.email) }} 
+
+</div>             <div class="mb-2"> 
+
+        {{ form_row(form.phone)}} 
+
+</div> 
+
+             <div class="mb-2"> 
+
+        {{ form_row(form.objet) }} 
+
+</div>             <div class="mb-2"> 
+
+        {{ form_row(form.message) }} 
+
+</div> 
+
+             <div class="mb-2"> 
+
+        {{ form_row(form.envoyer) }} 
+
+             </div> 
+
+    {{ form_end(form) }} 
+
+    </div> 
+
+    </div> 
+
+    </div> 
+
+{% endblock %} 
