@@ -9,22 +9,41 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 final class DevisController extends AbstractController
 {
     #[Route('/devis', name: 'app_devis')]
-    public function index(Request $request, EntityManagerInterface $entityManager): Response
-      
-    { 
+    public function index(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ): Response {
         $devis = new Devis();
-        $form = $this->createForm(DevisType::class,$devis); 
-        $form->handleRequest($request); 
+        $form = $this->createForm(DevisType::class, $devis);
+        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) { 
-
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Sauvegarde en base
             $entityManager->persist($devis);
             $entityManager->flush();
-         
+
+            // Envoi de l'e-mail
+            $email = (new Email())
+                ->from('amine@example.com')
+                ->to('baji.lamallem@gmail.com')
+                ->subject('test devis')
+                ->html("Nom: " . $devis->getLastName() . "\n" .
+                "Prénom: " . $devis->getFirstName() . "\n" .
+                "Email: " . $devis->getEmail() . "\n" .
+                "Téléphone: " . $devis->getPhone()
+                    
+                );
+
+            $mailer->send($email);
+
+            // Redirection après traitement
             return $this->redirectToRoute('app_devis');
         }
 
@@ -33,12 +52,4 @@ final class DevisController extends AbstractController
             'devis' => $devis,
         ]);
     }
-         
-
-        
-
-    } 
-
-
-    
-
+}
