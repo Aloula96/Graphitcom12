@@ -4,13 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Devis;
 use App\Form\DevisType;
+use App\Entity\SiteVitrine;
+use App\Form\SiteVitrineTypeForm;
+use Symfony\Component\Mime\Email;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 
 final class DevisController extends AbstractController
 {
@@ -52,4 +54,42 @@ final class DevisController extends AbstractController
             'devis' => $devis,
         ]);
     }
+
+    #[Route('/siteVitrine', name: 'app_vitrine')]
+         public function vitrine(Request $request,EntityManagerInterface $entityManager,
+        MailerInterface $mailer    ): Response {
+        // Création d'un nouvel objet SiteVitrine
+               $vitrine = new Vitrine();
+        $form = $this->createForm(SiteVitrineTypeForm::class, $vitrine);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Sauvegarde en base de données
+            $entityManager->persist($vitrine);
+            $entityManager->flush();
+
+              // Envoi de l'e-mail
+            $email = (new Email())
+                ->from('amine@example.com')
+                ->to('baji.lamallem@gmail.com')
+                ->subject('devis site vitrine')
+                ->html("Nom: " . $vitrine->getLastName() . "\n" .
+                "Prénom: " . $vitrine->getFirstName() . "\n" .
+                "Email: " . $vitrine->getEmail() . "\n" .
+                "Téléphone: " . $vitrine->getPhone()
+                    
+                );
+
+            $mailer->send($email);
+
+            // Redirection après traitement
+            return $this->redirectToRoute('app_devis');
+        }
+
+        return $this->render('siteVitrine/vitrine.html.twig', [
+            'form' => $form->createView(),
+            'vitrine' => $vitrine,
+        ]);
+
 }
+  }
