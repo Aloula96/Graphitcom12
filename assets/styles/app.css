@@ -2,7 +2,7 @@ body {
     background-color: #F5F5F5;
     font-family: "roboto";
     height: 100vh;
- 
+
    
 }
 a {
@@ -248,6 +248,18 @@ h2{
   justify-content: center;
   align-items: center;
 }
+
+.image-adn {
+  background-image: url('/images/bgContact.webp');
+  background-size: cover;                /* Couvre tout l'écran */
+  background-position: center ;    /* Centre l'image */
+  background-repeat: no-repeat;          /* Ne répète pas */
+  min-height: 100vh;                     /* Hauteur minimum = taille de la fenêtre */
+  width: 100vw;
+
+}
+
+
 
 @media (max-width: 992px) {
   .paragraph1, .paragraph2,
