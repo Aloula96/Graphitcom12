@@ -13,6 +13,8 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 final class DevisController extends AbstractController
 {
@@ -22,10 +24,19 @@ final class DevisController extends AbstractController
         EntityManagerInterface $entityManager,
         MailerInterface $mailer
     ): Response {
+    public function index(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        MailerInterface $mailer
+    ): Response {
         $devis = new Devis();
         $form = $this->createForm(DevisType::class, $devis);
         $form->handleRequest($request);
+        $form = $this->createForm(DevisType::class, $devis);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Sauvegarde en base
         if ($form->isSubmitted() && $form->isValid()) {
             // Sauvegarde en base
             $entityManager->persist($devis);
